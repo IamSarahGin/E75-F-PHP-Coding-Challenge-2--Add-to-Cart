@@ -1,0 +1,145 @@
+/* Add your CSS styles here */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #dca421 !important;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+.nav-icons {
+    font-size: 18px;
+}
+
+.container {
+    max-width: 2000px; /* Adjust the max-width to fit exactly two columns */
+    margin: 20px auto; /* Remove margin */
+    padding: 10px; /* Remove padding */
+    display: grid;
+    grid-template-columns: 250px 250px; /* Set fixed widths for the columns */
+    grid-column-gap: 30px; /* Adjust the gap between columns */
+}
+
+
+
+
+
+.product {
+    border: 1px solid #dca421;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-right: 20px; /* Remove right margin */
+    width: 250px; /* Set fixed width */
+    height: 400px; /* Set fixed height */
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
+.product img {
+    width: 100%; /* Ensure the image fills its container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure images don't exceed their container's width */
+    max-height: 100%; /* Ensure images don't exceed their container's height */
+}
+
+
+.product h3 {
+    margin: 10px 0;
+}
+
+.add-to-cart-btn {
+    background-color: orange !important; /* Apply orange background color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    padding: 5px 10px; /* Adjust padding as needed */
+    cursor: pointer; /* Add cursor style */
+    border-radius: 5px; /* Add rounded corners */
+}
+
+
+.cart-item {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+.cart-item img {
+    width: 100px; /* Set width for the product image */
+    height: 100px; /* Set height for the product image */
+    border-radius: 50%; /* Make the image circular */
+    margin-right: 20px; /* Add some space between image and text */
+}
+
+.cart-item-details {
+    flex-grow: 1; 
+    margin-right: 5px;/* Allow details to take remaining space */
+}
+
+.cart-item h3 {
+    margin-right: 5px;
+}
+.cart-item p{
+    margin-right: 5px;
+}
+
+
+.cart-item .remove-btn {
+    color: red; /* Set color for remove button */
+    cursor: pointer; /* Set cursor to pointer on hover */
+}
+
+/* CSS for the shopping cart drawer */
+.cart-drawer {
+    position: fixed;
+    top: 50px; /* Adjust the top position to place it below the navigation bar */
+    right: 0;
+    width: 100%; /* Full width on smaller screens */
+    max-width: 680px; /* Limit width on larger screens */
+    height: calc(100vh - 50px); /* Set the height to fill the remaining viewport height */
+    background-color: white;
+    z-index: 100; /* Adjusted z-index to be above products */
+    transition: transform 0.3s ease; /* Smooth transition */
+    transform: translateX(100%); /* Initially hidden */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Make cart drawer scrollable */
+}
+.cart-drawer.open {
+    transform: translateX(0); /* Slide in when open */
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .cart-drawer {
+        max-width: 100%; /* Full width on smaller screens */
+    }
+}
+
+/* Clearfix to clear the float and start new row */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.nav-icons {
+    position: relative; /* Ensure z-index works */
+    z-index: 100000; /* Ensure cart icon stays above the drawer */
+}
